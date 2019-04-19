@@ -1,0 +1,38 @@
+// Colors
+$light-grey:#dddddd;
+$purple:#397ab1;
+$brand-primary:$purple;
+$grey: #dddddd;
+$very-light-grey:#f9f9f9;
+$body-grey: #fafafa;
+$dark-grey: #777777;
+
+$boxed-view-border-color: $grey;
+$body-default-color: #333333;
+// Sizes
+$site-max-width:100rem;
+$breakpoint: 45rem;
+// Font Sizes
+$base-font-size:1.4rem;
+$large-font-size:1.8rem;
+// Spacing
+$space: 1.4rem;
+$large-space: 2.8rem;
+$padding-med:1rem;
+// Button
+$button-purple:$purple;
+// Item
+
+$item-border-width: 4px;
+
+
+$header-height:6rem;
+$header-button-color:#2d36d8;
+// Page content
+$page-content-sidebar-width:30rem;
+$page-content-main-width:calc(#{$site-max-width} - #{$page-content-sidebar-width});
+$page-content-height: calc(100vh - #{$header-height});
+
+// Misc
+$input-border: $grey;
+$input-spacing: 1rem;

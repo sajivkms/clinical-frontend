@@ -1,0 +1,16 @@
+button {
+  background: $button-purple;
+  border: none;
+  color: white;
+  cursor: pointer;
+  padding: $padding-med;
+  font-size: $base-font-size;
+  margin-bottom: $space;
+  outline: none;
+  transition: 0.3s;
+  line-height:1.2;
+}
+
+button:hover {
+    background-color: darken($button-purple, 10%)
+}

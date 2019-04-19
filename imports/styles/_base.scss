@@ -1,0 +1,56 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+.flex-div {
+  display:flex;
+  justify-content: space-around;
+}
+body {
+    font-family: Helvetica, Arial ,sans-serif;
+    font-size: $base-font-size;
+    color: $body-default-color;
+}
+h1 {
+   font-weight: 300;
+   margin-bottom: $space;
+}
+
+p {
+    margin-bottom:$space;
+}
+a {
+    color: $body-default-color;
+    color:black;
+}
+h2 {
+    margin-bottom:$space;
+    font-size:$large-font-size;
+}
+input[type=text], input[type=email], input[type=password], textarea{
+    font-size: $base-font-size;
+    font-family: Helvetica, Arial ,sans-serif;
+    margin-bottom: $space;
+    padding:$padding-med;
+    border: 1px solid $light-grey;
+    -webkit-overflow-scrolling: touch;
+    outline:none;
+    transition:0.3s ease;
+    margin-right:$space;
+}
+input[type=text]:focus, input[type=email]:focus, input[type=password]:focus, textarea:focus {
+    border-color: $brand-primary;
+}
+.App {
+  margin: 0 auto;
+  max-width: $site-max-width;
+}
+.error--p {
+  color:red;
+}
