@@ -2,9 +2,10 @@ import pandas as pd
 import sys
 import json
 import math
-path = "/home/ubuntu/meteor-graphs/imports/data/"
+PATH = "/home/ubuntu/meteor-graphs/imports/data/"
 data = sys.argv[1]
-df = pd.read_csv(path + "ctsummary.csv")
+df = pd.read_csv(PATH + "ctsummary.csv")
+loc_df = pd.read_csv(PATH + 'ctLocation.csv')
 def find_rows(string, df, col):
     cont = df[col].str.contains(string)
     keys = cont.keys()
@@ -37,7 +38,14 @@ def find_top_agencies(rows):
     cdf = pd.DataFrame({'agency':cts.index, 'count':cts.values})
     top10df = cdf.head(10)
     return top10df.values.tolist()
+def find_cities(rows, location_df):
+    ids = list(set(list(rows["id"])))
+    ans = location_df[pd.DataFrame(location_df["id"].tolist()).isin(ids).any(1)]
+    cities = list(set(list(ans["city"])))
+    cities = [x for x in cities if str(x) != 'nan']
+    return cities
 rows = find_rows(data, df, "disease")
 d = find_top_drug(rows)
+cities = find_cities(rows, loc_df)
 agen = find_top_agencies(rows)
-print(json.dumps([d, agen]))
+print(json.dumps([d, agen, cities]))
